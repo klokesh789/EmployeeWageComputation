@@ -11,22 +11,24 @@ public class EmployeeWageCalculator {
 		int empWage = 0;
 		int empMonthlywage = 0;
 		int empCheck =(int) Math.floor(Math.random() * 10) % 3;
-		switch( empCheck ) {
-		case 2: 			
-			System.out.println("Employee is present ");
-			empHrs = 8;
-			break;
-		case 1 :
-			System.out.println("Employee doing part-time ");
-			empHrs = 8;
-			break;
-		default:
-			System.out.println("Employee is Absent ");
-			empHrs = 0;
+		for ( int day =0 ;day<=no_of_workingdays;day++) {
+			switch( empCheck ) {
+			case 2: 			
+				System.out.println("Employee is present ");
+				empHrs = 8;
+				break;
+			case 1 :
+				System.out.println("Employee doing part-time ");
+				empHrs = 8;
+				break;
+			default:
+				System.out.println("Employee is Absent ");
+				empHrs = 0;
+			}
+			empWage = empHrs * EMP_RATE_PER_HOUR;
+			empMonthlywage = empWage * no_of_workingdays;
+			System.out.println("Emp Wage: " + empWage);
 		}
-		empWage = empHrs * EMP_RATE_PER_HOUR;
-		System.out.println("Emp Wage: " + empWage);
-		empMonthlywage = empWage * no_of_workingdays;
 		System.out.println("Total Monthly Wage: " +empMonthlywage);
 
 	}
